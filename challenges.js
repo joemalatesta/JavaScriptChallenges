@@ -24,9 +24,7 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
-function addOne(n) {
-  return n + 1;
-}
+
 
 
 /*-----------------------------------------------------------------
@@ -43,13 +41,7 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 
-function addTwoNumbers(a, b) {
-  if (typeof a === 'number' && typeof b === 'number') {
-    return a + b;
-  } else {
-    return NaN;
-  }
-}
+
 
 
 /*-----------------------------------------------------------------------------
@@ -66,28 +58,8 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
-/*--- okay solution ---*/
-function sumNumbers(nums) {
-  var sum = 0;
-  for(var i = 0; i < nums.length; i++) {
-    sum += nums[i];
-  }
-  return sum;
-}
 
-/*--- better solution (use forEach unless you have to exit loop early) ---*/
-// function sumNumbers(nums) {
-//   var sum = 0;
-//   nums.forEach(function(num) {
-//     sum += num;
-//   });
-//   return sum;
-// }
 
-/*--- best solution (don't worry, this will make sense soon enough) ---*/
-// function sumNumbers(nums) {
-//   return nums.reduce((sum, num) => sum += num, 0);
-// }
 
 
 /*-----------------------------------------------------------------------------
@@ -104,30 +76,6 @@ add(7,-12) //=> -5
 -----------------------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
-/*--- using the arguments keyword (array-like object) and a for loop ---*/
-function addList() {
-  var sum = 0;
-  for (var i = 0; i < arguments.length; i++) {
-    sum += arguments[i];
-  }
-  return sum;
-}
-
-/*--- make arguments a true array then forEach ---*/
-// function addList() {
-//   var nums = Array.from(arguments);
-//   var sum = 0;
-//   nums.forEach(function(num) {
-//     sum += num;
-//   });
-//   return sum;
-// }
-
-/*--- use rest paramater syntax (ES2015) then reduce ---*/
-// function addList(...nums) {
-//   // nums will be an array containing all arguments 
-//   return nums.reduce((sum, num) => sum + num, 0);
-// }
 
 
 /*-----------------------------------------------------------------------------
@@ -145,17 +93,7 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
-/*--- Not using the modulus operator ---*/
-function computeRemainder(dividend, divisor) {
-  if (divisor === 0) return Infinity;
-  return dividend - (Math.floor(dividend / divisor) * divisor);
-}
 
-/*--- Using the modulus operator ---*/
-// function computeRemainder(dividend, divisor) {
-//   if (divisor === 0) return Infinity;
-//   return dividend % divisor;
-// }
 
 
 /*-----------------------------------------------------------------------------
@@ -172,16 +110,7 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------------------*/
 // Your solution for 06-range here:
 
-function range(start, finish) {
-  if (start > finish) return 'First argument must be less than second';
 
-  var range = [];
-  for (var n = start; n < finish; n++) {
-    range.push(n);
-  }
-
-  return range;
-}
 
 
 /*-----------------------------------------------------------------------------
@@ -194,27 +123,7 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
-function reverseUpcaseString(str) {
-  var results = '';
-  for (var i = 0; i < str.length; i++) {
-    // can use square brackets to access chars in a string
-    // but using the charAt() method is preferred
-    results = str.charAt(i).toUpperCase() + results;
-  }
-  return results;
-}
 
-// function reverseUpcaseString(str) {
-//   // convert string to array, reverse, map and finally join it
-//   return str.split('').reverse().map(function(char) {
-//     return char.toUpperCase();
-//   }).join('');
-// }
-
-// function reverseUpcaseString(str) {
-//   // above version using an arrow function
-//   return str.split('').reverse().map(c => c.toUpperCase()).join('');
-// }
 
 
 /*-----------------------------------------------------------------------------
@@ -229,21 +138,6 @@ removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
-/*--- Using for loop ---*/
-function removeEnds(str) {
-  if (str.length < 3) return '';
-  var result= '';
-  for (var i = 1; i < str.length - 1; i++) {
-    result += str.charAt(i);
-  }
-  return result;
-}
-
-/*--- Using substr String method ---*/
-// function removeEnds(str) {
-//   if (str.length < 3) return '';
-//   return str.substr(1, str.length - 2);
-// }
 
 
 /*-----------------------------------------------------------------------------
@@ -260,20 +154,7 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 -----------------------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 
-/*--- using a for loop ---*/
-function charCount(str) {
-  var result = {};
-  for (var i = 0; i < str.length; i++) {
-    var char = str.charAt(i);
-    // already seen this char?
-    if (result[char]) {
-      result[char]++;
-    } else {
-      result[char] = 1;
-    }
-  }
-  return result;
-}
+
 
 /*--- convert str to array and use reduce with a ternary ---*/
 // function charCount(str) {
@@ -301,55 +182,8 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
 
-// function formatWithPadding(num1, str, num2){
-//   let stringToPad = num1.toString();
-
-//   if(stringToPad.length >= num2){
-//     return stringToPad;
-//   } else {
-//     let padding = num2 - stringToPad.length;
-//     let newArr = stringToPad.split('');
-//     while(padding > 0){
-//       newArr.unshift(str);
-//       padding--;
-//     }
-//     return newArr.join('');
-//   }
-
-// }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*--- Using for while loop ---*/
-function formatWithPadding(int, char, length) {
-  let result = int.toFixed(0);
-  while (result.length < length) {
-    result = char + result;
-  }
-  return result;
-}
-
-/*--- Using the padStart String method ---*/
-// function formatWithPadding(int, char, length) {
-//   return int.toFixed(0).padStart(length, char);
-// }
 
 
 /*-----------------------------------------------------------------------------
@@ -368,24 +202,8 @@ isPalindrome(''); //=> true
 -----------------------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
 
-/*--- Using a for loop ---*/
-const isPalindrome = (str) => {
-  str = str.toLowerCase();
-  while (str.includes(' ')) str = str.replace(' ', '');
-  for (let i = 0; i < Math.floor(str.length / 2); i++) {
-    if (str.charAt(i) !== str.charAt(str.length - i - 1)) return false;
-  }
-  return true;
-}
 
-/*--- Using regular expression to replace spaces ---*/
-// const isPalindrome = (str) => {
-//   str = str.toLowerCase().replace(/ /g, '');
-//   for (let i = 0; i < Math.floor(str.length / 2); i++) {
-//     if (str.charAt(i) !== str.charAt(str.length - i - 1)) return false;
-//   }
-//   return true;
-// }
+
 
 
 /*-----------------------------------------------------------------------------
@@ -404,22 +222,9 @@ hammingDistance('abc', 'ab'); //=> NaN
 -----------------------------------------------------------------------------*/
 // Your solution for 12-hammingDistance here:
 
-const hammingDistance = (str1, str2) => {
-  if (str1.length !== str2.length) return NaN;
-  var count = 0;
-  for (let i = 0; i < str1.length; i++) {
-    if (str1.charAt(i) !== str2.charAt(i)) count++;
-  }
-  return count;
-}
 
-/*--- convert one string to array and reduce ---*/
-// const hammingDistance = (s1, s2) => {
-//   if (s1.length !== s2.length) return NaN;
-//   s1.split('').reduce(function(count, char, idx) {
-//     return char !== s2.charAt(idx) ? count + 1 : count;
-//   }, 0);
-// }
+
+
 
 
 /*-----------------------------------------------------------------------------
@@ -437,19 +242,8 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------------------*/
 // Your solution for 13-mumble here:
 
-const mumble = (str) => {
-  var result = '';
-  for (let i = 0; i < str.length; i++) {
-    // the ((i || '') && '-') only adds a dash if it's not the first iteration
-    result += ((i || '') && '-') + str.charAt(i).repeat(i + 1);
-  }
-  return result;
-}
 
-/*--- convert to array and use reduce (break that one-liner down!) ---*/
-// const mumble = (str) => {
-//   return str.split('').reduce((result, c, i) => result + ((i || '') && '-') + c.repeat(i + 1), '');
-// }
+
 
 
 /*-----------------------------------------------------------------------------
@@ -465,22 +259,7 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 -----------------------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
 
-/*--- using forEach ---*/
-const fromPairs = (arr) => {
-  let obj = {};
-  arr.forEach((kvArr) => {
-    obj[kvArr[0]] = kvArr[1];
-  });
-  return obj;
-}
 
-/*--- using reduce & arrow function ---*/
-// const fromPairs = (arr) => {
-//   return arr.reduce((obj, kvArr) => {
-//       obj[kvArr[0]] = kvArr[1];
-//       return obj;
-//   }, {});
-// }
 
 
 /*-----------------------------------------------------------------------------
@@ -496,20 +275,7 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44}); //=> {a: 1, b: 22, c: 
 -----------------------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
 
-/*--- Using ES2015's rest parameter syntax ---*/
-const mergeObjects = (target, ...objects) => {
-  objects.forEach(function(obj) {
-    for(let key in obj) {
-      target[key] = obj[key];
-    }
-  });
-  return target;
-}
 
-/*--- Using ES2015's Object.assign & spread operator ---*/
-// function mergeObjects(target, ...objects) {
-//   return Object.assign(target, ...objects);
-// }
 
 
 /*-----------------------------------------------------------------------------
@@ -540,22 +306,8 @@ findHighestPriced([
 -----------------------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
 
-function findHighestPriced(arr) {
-  var highestPrice = 0;
-  var resultObj;
-  arr.forEach(function(item) {
-    if (item.price > highestPrice) {
-      highestPrice = item.price;
-      resultObj = item;
-    }
-  });
-  return resultObj;
-}
 
-/*--- using the reduce Array method ---*/
-// function findHighestPriced(arr) {
-//   return arr.reduce((highest, item) => item.price > highest.price ? item : highest);
-// }
+
 
 
 /*-----------------------------------------------------------------------------
@@ -579,13 +331,6 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 -----------------------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
 
-function mapArray(arr, cb) {
-  var newArr = [];
-  arr.forEach(function(el, idx) {
-    newArr.push( cb(el, idx) );
-  });
-  return newArr;
-}
 
 
 /*-----------------------------------------------------------------------------
@@ -614,13 +359,6 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 -----------------------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
 
-function reduceArray(arr, cb, initAcc) {
-  var acc = initAcc;
-  arr.forEach(function(el, idx) {
-    acc = cb(acc, el, idx);
-  });
-  return acc;
-}
 
 
 /*-----------------------------------------------------------------------------
@@ -642,33 +380,7 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 -----------------------------------------------------------------------------*/
 // Your solution for 19-flatten here:
 
-/*--- Using recursion ---*/
-function flatten(arr) {
-  var flatArr = [];
-  arr.forEach(function(elem) {
-    // use the Array.isArray static method to test if an array
-    if (Array.isArray(elem)) {
-      flatArr = flatArr.concat(flatten(elem));
-    } else {
-      flatArr.push(elem);
-    }
-  });
-  return flatArr;
-}
 
-/*--- Using recursion and inline ternary for conciseness ---*/
-// function flatten(arr) {
-//   var flatArr = [];
-//   arr.forEach(function(elem) {
-//     flatArr = flatArr.concat(Array.isArray(elem) ? flatten(elem): elem);
-//   });
-//   return flatArr;
-// }
-
-/*--- Use reduce and  recursion for a one-liner ---*/
-// function flatten(arr) {
-//   return arr.reduce((flatArr, elem) => flatArr.concat(Array.isArray(elem) ? flatten(elem): elem), []);
-// }
 
 
 /*-----------------------------------------------------------------------------
@@ -686,13 +398,7 @@ isPrime(200) //=> false
 -----------------------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
 
-function isPrime(n) {
-  if (n < 2 || !Number.isInteger(n)) return false;
-  for (var i = 2; i <= n / 2; i++) {
-    if (Number.isInteger(n / i)) return false;
-  }
-  return true;
-}
+
 
 
 /*-----------------------------------------------------------------------------
@@ -714,54 +420,7 @@ primeFactors(200) //=> [2, 2, 2, 5, 5]
 -----------------------------------------------------------------------------*/
 // Your solution for 21-primeFactors here:
 
-/*--- most logical approach ---*/
-function primeFactors(n) {
-  var factors = [];
-  if (n < 2 || !Number.isInteger(n)) return factors;
 
-  // function to help find next prime to divide by...
-  function isPrime(n) {
-    if (n < 2 || !Number.isInteger(n)) return false;
-    for (var i = 2; i <= n / 2; i++) {
-      if (Number.isInteger(n / i)) return false;
-    }
-    return true;
-  }
-
-  var prime = 2;  // start with smallest prime
-  while (!isPrime(n)) {
-    if (Number.isInteger(n / prime)) {
-      factors.push(prime);
-      n = n / prime;
-    } else {
-      // find next prime
-      prime++;
-      while (!isPrime(prime)) prime++;
-    }
-  }
-  factors.push(n);
-  return factors;
-}
-
-/*-- a more efficient algorithm that relies on the fact
-     that you don't have to check if the divisor is prime 
-     as shown here:
-     https://people.revoledu.com/kardi/tutorial/BasicMath/Prime/Algorithm-PrimeFactor.html ---*/
-// function primeFactors(n) {
-//   var factors = [];
-//   if (n < 2 || !Number.isInteger(n)) return factors;
-//   var divisor = 2;
-//   while (n >= divisor * divisor) {
-//     if (Number.isInteger(n / divisor)) {
-//       factors.push(divisor);
-//       n = n / divisor;
-//     } else {
-//       divisor++;
-//     }
-//   }
-//   factors.push(n);
-//   return factors;
-// }
 
 
 /*-----------------------------------------------------------------------------
@@ -780,16 +439,6 @@ intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) //=> [1, true, 1]
 -----------------------------------------------------------------------------*/
 // Your solution for 22-intersection here:
 
-function intersection(a1, a2) {
-  var result = [];
-  // create copy of 2nd array for purpose of handling dups
-  var _a2 = [...a2];
-  a1.forEach(val => {
-    var idx = _a2.indexOf(val);
-    if (idx > -1) result.push(_a2.splice(idx, 1)[0]);
-  });
-  return result;
-}
 
 
 /*-----------------------------------------------------------------------------
@@ -809,48 +458,9 @@ balancedBrackets( '[({}[])]' ) // => true
 -----------------------------------------------------------------------------*/
 // Your solution for 23-balancedBrackets here:
 
-/*
-  The solution for this challenge is best implemented using
-  a data structure known as a 'stack'. Think of a stack working a lot
-  like a stack of papers where you always place new papers on top
-  and always remove the top paper.
-*/
 
-function balancedBrackets(str) {
-  // can't be balanced if string odd in length
-  if (str.length % 2) return false;
-  var stack = [];
-  for (var i = 0; i < str.length; i++) {
-    var b = str.charAt(i);
-    if ( '([{'.includes(b) ) {
-      // add opening brackets to the stack
-      stack.push(b);
-    } else {
-      // not an opening bracket, so remove last opening and check if matched
-      if (!'() {} []'.includes(stack.pop() + b)) return false;
-    }
-  }
-  return true;
-}
 
-/*--- Using Array.every method to iterate unless false is returned
-      Also using arrow function ---*/
-// function balancedBrackets(str) {
-//   var stack = [];
-//   return str.split('').every(c => {
-//     if ('([{'.includes(c)) {
-//       return stack.push(c);
-//     } else {
-//       return '() {} []'.includes(stack.pop() + c)
-//     }
-//   });
-// }
 
-/*--- Holy ternary Batman! Almost a one-liner! ---*/
-// function balancedBrackets(str) {
-//   var a = [];
-//   return str.split('').every(c => '([{'.includes(c) ? a.push(c) : '() {} []'.includes(a.pop() + c));
-// }
 
 
 /*-----------------------------------------------------------------------------
@@ -872,30 +482,8 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 -----------------------------------------------------------------------------*/
 // Your solution for 24-isWinningTicket here:
 
-/* Naive for loops - :( */
-function isWinningTicket(ticket){
-  var winner = true;
-  for (var i = 0; i < ticket.length; i++) {
-    var charFromNumber = String.fromCharCode(ticket[i][1]);
-    if (!ticket[i][0].includes(charFromNumber)) {
-      winner = false;
-      break;
-    }
-  }
-  return winner;
-}
 
-/* Array.prototype.every is sweet */
-// function isWinningTicket(ticket){
-//   return ticket.every(function(arr) {
-//     return arr[0].includes(String.fromCharCode(arr[1]));
-//   });
-// }
 
-/* Arrow functions help make concise one-liners possible */
-// function isWinningTicket(ticket){
-//   return ticket.every(arr => arr[0].includes(String.fromCharCode(arr[1])));
-// }
 
 
 /*-----------------------------------------------------------------------------
@@ -917,20 +505,7 @@ getNumForIP( '10.0.0.1' ) // => 167772161
 -----------------------------------------------------------------------------*/
 // Your solution for 25-getNumForIP here:
 
-function getNumForIP(ip) {
-  // reverse the chunks so that the we can use the index like 256**idx 
-  var chunks = ip.split('.').reverse();
-  var sum = 0;
-  chunks.forEach(function(chunk, idx) {
-    sum += parseInt(chunk) * 256**idx;
-  });
-  return sum;
-}
 
-/* Using reduce method gives us a one-liner */
-// function getNumForIP(ip) {
-//   return ip.split('.').reverse().reduce((sum, chunk, idx) => sum + parseInt(chunk) * 256**idx, 0);
-// }
 
 
 /*-----------------------------------------------------------------------------
@@ -951,16 +526,7 @@ toCamelCase( 'A_b_c' ) // => 'ABC'
 -----------------------------------------------------------------------------*/
 // Your solution for 26-toCamelCase here:
 
-function toCamelCase(str) {
-  return str.replace(/[_-]\w/g, function(match) {
-    return match.charAt(1).toUpperCase();
-  });
-}
 
-/* Take advantage of the implicit return of an arrow function for a one-line solution */
-// function toCamelCase(str) {
-//   return str.replace(/[_-]\w/g, match => match.charAt(1).toUpperCase());
-// }
 
 
 /*-----------------------------------------------------------------------------
@@ -982,14 +548,7 @@ countTheBits( 65535 ) //=> 16
 -----------------------------------------------------------------------------*/
 // Your solution for 27-countTheBits here:
 
-function countTheBits(int) {
-  return int.toString(2).split('').filter(bit => bit === '1').length;
-}
 
-/* Using a regular expression. Note || operator to provide an array so that can use length if there are no matches */
-// function countTheBits(int) {
-//   return (int.toString(2).match(/1/g) || []).length;
-// }
 
 
 /*-----------------------------------------------------------------------------
@@ -1011,39 +570,7 @@ gridTrip( [100, -22], 'L2L15D50U1D9') //=> [83, -80]
 -----------------------------------------------------------------------------*/
 // Your solution for 28-gridTrip here:
 
-/*--- Process one character at a time ---*/
-function gridTrip(xyArr, moves) {
-  // create result array with starting positions
-  var result = [xyArr[0], xyArr[1]];
-  // lookup object for result arr index and multipler for each dir char
-  const lookup = {'R': [0, 1], 'U': [1, 1], 'L': [0, -1], 'D': [1, -1]};
-  var idx = 0;
-  while (idx < moves.length) {
-    // first char of the move string is the direction to be used to access the lookup object
-    var dir = moves[idx];
-    idx++;
-    var numString = '';
-    while ('0123456789'.includes(moves[idx]) && idx < moves.length) {
-      numString += moves[idx];
-      idx++;
-    }
-    result[lookup[dir][0]] += numString * lookup[dir][1];
-  }
-  return result;
-}
 
-/*--- Using regular expressions to break up the moves into an array ---*/
-// function gridTrip(xyArr, moves) {
-//   var result = [xyArr[0], xyArr[1]];
-//   const lookup = {'R': [0, 1], 'U': [1, 1], 'L': [0, -1], 'D': [1, -1]}; 
-//   // regular expressions are fantastic - be sure to use the 'global' flag with the match method
-//   moves = moves.match(/[UDLR]\d+/g);
-//   moves.forEach(function(move) {
-//     var dir = move.charAt(0);
-//     result[lookup[dir][0]] += move.substr(1) * lookup[dir][1];
-//   });
-//   return result;
-// }
 
 
 /*-----------------------------------------------------------------------------
@@ -1065,29 +592,6 @@ addChecker( [10, 15, 16, 22], 19 ) // => false
 -----------------------------------------------------------------------------*/
 // Your solution for 29-addChecker here:
 
-/* inefficent solution - does not leverage sorted array */
-function addChecker(nums, total) {
-  var result = false;
-  for (i = 0; i < nums.length - 1; i++) {
-    for (j = i + 1; j < nums.length; j++) {
-      if (nums[i] + nums[j] === total) return true; 
-    }
-  }
-  return result;
-}
-
-/* efficent solution - leveraging the sorted array */
-// function addChecker(nums, total) {
-//   var result = false;
-//   var start = 0
-//   var end = nums.length - 1; 
-//   while (start < end) {
-//     var sum = nums[start] + nums[end];
-//     if (sum === total) return true;
-//     sum < total ? start++ : end--;
-//   }
-//   return result;
-// }
 
 
 /*-----------------------------------------------------------------------------
@@ -1111,29 +615,4 @@ totalTaskTime( [5, 2, 6, 8, 7, 2], 3 ) // => 12
 -----------------------------------------------------------------------------*/
 // Your solution for 30- here:
 
-function totalTaskTime(tasks, numThreads) {
-  var time = 0, shortest, threads;
-  while(tasks.length > numThreads) {
-    // extract a task for each thread
-    threads = tasks.splice(0, numThreads);
-    // Find out the time for the task that will finish first.
-    // Using the spread operator to provide Math.min with a list of values
-    shortest = Math.min(...threads);
-    // Add the time for that shortest task
-    time += shortest;
-    // Reduce each task in threads by the shortest task time and
-    // remove all of those completed "short" tasks
-    threads = threads.map(t => t - shortest).filter(t => t);
-    // Put any remaining tasks back into threads and do it again (loop)...
-    tasks = threads.concat(tasks);
-  }
-  // When num remaining tasks is less or equal to numThreads,
-  // we just need to add the time from the longest remaining task.
-  // The ternary protects against Math.max returning infinity on an empty array
-  return time + (tasks.length ? Math.max(...tasks) : 0);
-}
 
-/* One-liner using different 'addition' approach */
-// function totalTaskTime(tasks, numThreads) {
-//   return tasks.length && Math.max(...tasks.reduce((b, t, i) => (b[b.indexOf(Math.min(...b))] += t) && b, tasks.splice(0, numThreads)));
-// }
